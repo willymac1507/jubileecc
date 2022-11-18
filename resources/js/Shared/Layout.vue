@@ -8,7 +8,8 @@
                         <img class="h-20 w-auto" src="../../images/logojch.png" alt="" />
                     </a>
                     <div class="ml-10 hidden space-x-8 lg:block">
-                        <a v-for="link in navigation" :key="link.name" :href="link.href" class="text-base font-medium text-white hover:text-indigo-50">{{ link.name }}</a>
+                        <NavLink v-for="link in navigation" :key="link.name" :href="link.href"
+                           class="text-base font-medium text-white hover:text-indigo-50">{{ link.name }}</NavLink>
                     </div>
                 </div>
                 <div class="ml-10 space-x-4">
@@ -25,11 +26,13 @@
 </template>
 
 <script setup>
+import NavLink from "./NavLink.vue";
+
 const navigation = [
 
 
     { name: 'Home', href: '/' },
-    { name: 'Users', href: '/Users' },
+    { name: 'Users', href: '/users' },
     { name: 'Docs', href: '#' },
     { name: 'Company', href: '#' },
 ]
