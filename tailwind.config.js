@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./**/*.{html,css,vue,php}'],
+  content: ['./resources/**/*.{html,css,vue,php}'],
   theme: {
-    extend: {},
+    extend: {
+        fontFamily: {
+            'sans': ['Archivo Narrow']
+        },
+    },
   },
   plugins: [],
 }
