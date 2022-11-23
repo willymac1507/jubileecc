@@ -6,6 +6,9 @@ module.exports = {
         fontFamily: {
             'sans': ['Archivo Narrow']
         },
+        maxHeight: {
+            '128': '32rem',
+        }
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingsController;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,16 +17,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home', [
-        'bookings' => Booking::query()
-            ->when(Request::input('date'), function ($query, $date) {
-                $query->where('date', 'like', "%{$date}%");
-            })
-            ->get()
-    ]);
-});
+Route::get('/', [BookingsController::class, 'show']);
 
 Route::get('/users', function () {
-    return Inertia::render('Users');
+    return Inertia::render('Users', [
+        'selectedDate' => '2022-11-23',
+    ]);
 });
